@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ssets/architecture.jpeg" alt="ARShop Banner" width="100%">
+  <img src="assets/architecture.jpeg" alt="ARShop Banner" width="100%">
 </p>
 
 <h1 align="center">👗 ARShop – Virtual Try-On System</h1>

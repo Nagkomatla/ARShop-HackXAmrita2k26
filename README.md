@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/architecture.jpeg" alt="ARShop Banner" width="100%">
+  <img src="./assets/architecture.jpeg" alt="ARShop Architecture" width="100%">
 </p>
 
 <h1 align="center">👗 ARShop – Virtual Try-On System</h1>
@@ -9,98 +9,93 @@ Hack X Amrita 2.0 – Igniting Ideas & Inspiring Impact
 </h3>
 
 <p align="center">
-An AI-powered <b>Real-Time Augmented Reality Clothing Try-On System</b> that allows users to preview outfits virtually using Computer Vision & Deep Learning.
+An AI-powered <b>Real-Time Augmented Reality Clothing Try-On Platform</b> that enables users to virtually try outfits using Computer Vision and Deep Learning.
 </p>
 
 ---
 
 # 🚀 Project Overview
 
-**ARShop** enables users to visualize clothing on their body in real-time using:
+**ARShop** is an intelligent virtual try-on system designed to enhance the online shopping experience.
 
-- 📸 Live Camera Input
-- 🧠 AI-Based Body Detection
-- 👕 Smart Clothing Scaling
-- 🎯 Real-Time Overlay Rendering
+It detects body posture, tracks facial alignment, scales clothing dynamically, and overlays garments in real time using advanced AI-based processing.
 
-This system bridges the gap between **e-commerce and immersive AR shopping experiences**.
+### 🎯 Key Highlights
+
+- 📸 Live Camera & Image Upload Support  
+- 🧠 AI-Based Body & Face Detection  
+- 👕 Intelligent Clothing Scaling  
+- 🔄 Real-Time Augmented Overlay  
+- 🌐 Web-Based User Interface  
 
 ---
 
 # 🏗️ System Architecture
 
-<p align="center">
-  <img src="assets/architecture.jpeg" width="80%">
-</p>
-
 ```mermaid
 flowchart TD
-    A[User Upload / Camera Input] --> B[Data Preparation]
+    A[User Camera / Upload] --> B[Data Preparation]
     B --> C[Body Detection & Sizing]
     C --> D[Face Detection]
     D --> E[Body Parts Tracking]
     E --> F[Edge Detection]
     F --> G[Image Masking]
-    G --> H[Scaling of Attire]
+    G --> H[Clothing Scaling]
     H --> I[Virtual Clothing Overlay]
-    I --> J[Real-Time Processing]
-    J --> K[User Interface Display]
-    K --> L[Final Results]
+    I --> J[Real-Time Rendering]
+    J --> K[User Interface]
+    K --> L[Final Output]
 ```
 
 ---
 
-# 🧠 Prototype Module Structure
+# 🧠 Core Modules
 
-## 🔹 1. Detecting & Sizing the Body
-- OpenCV + TensorFlow
-- Human body bounding box detection
-- Dynamic width & height calculation
+## 1️⃣ Body Detection & Sizing
+- Detects full body using OpenCV + TensorFlow  
+- Calculates bounding box dimensions  
+- Determines clothing scaling ratio  
 
-## 🔹 2. Face Detection
-- Haar Cascade / Deep Learning
-- Face alignment support
+## 2️⃣ Face Detection
+- Haar Cascade / Deep Learning Model  
+- Aligns clothing based on face position  
 
-## 🔹 3. Image Masking
-- Background removal
-- Transparent PNG blending
+## 3️⃣ Body Parts Tracking
+- Shoulder & torso keypoint mapping  
+- Ensures accurate garment positioning  
 
-## 🔹 4. Edge Detection
-- Canny Edge Detection
-- Enhances contour alignment
+## 4️⃣ Data Preparation
+- Frame resizing  
+- Noise filtering  
+- Image normalization  
 
-## 🔹 5. Scaling of Attire
-- Dynamic resizing
-- Shoulder-based proportional scaling
+## 5️⃣ Edge Detection
+- Canny Edge Detection  
+- Improves contour matching  
 
-## 🔹 6. Body Parts Tracking
-- Keypoint detection
-- Shoulder & torso mapping
+## 6️⃣ Image Masking
+- Background removal  
+- Transparent cloth blending  
 
-## 🔹 7. Data Preparation
-- Frame resizing
-- Noise reduction
-- Image normalization
+## 7️⃣ Clothing Scaling Engine
+- Dynamic resizing  
+- Proportional shoulder-based adjustment  
 
-## 🔹 8. Virtual Clothing Overlay
-- Alpha blending
-- Transparent cloth positioning
+## 8️⃣ Virtual Clothing Overlay
+- Alpha blending  
+- Frame-by-frame rendering  
 
-## 🔹 9. User Interface
-- Flask Web App
-- Upload & Preview System
+## 9️⃣ Real-Time Processing
+- Continuous camera feed processing  
+- Instant AR output generation  
 
-## 🔹 10. Real-Time Processing
-- Live video frame processing
-- Continuous overlay update
-
-## 🔹 11. Results
-- Final rendered output
-- Downloadable preview image
+## 🔟 User Interface
+- Flask-based Web Application  
+- Upload, Preview & Output Display  
 
 ---
 
-# 📁 Project Folder Structure
+# 📂 Project Structure
 
 ```
 ARShop-HackXAmrita2k26/
@@ -108,19 +103,27 @@ ARShop-HackXAmrita2k26/
 ├── backend/
 │   ├── main.py
 │   ├── models/
-│   ├── static/
-│   │   ├── clothes/
-│   │   ├── uploads/
-│   │   └── output/
-│   └── templates/
-│       └── index.html
+│   ├── processing/
+│   └── utils/
+│
+├── frontend/
+│   ├── templates/
+│   │   └── index.html
+│   └── static/
+│       ├── css/
+│       ├── js/
+│       └── images/
+│
+├── data/
+│   ├── clothes/
+│   ├── sample_inputs/
+│   └── outputs/
 │
 ├── assets/
-│   ├── banner.png
-│   └── architecture.png
+│   └── architecture.jpeg
 │
-├── README.md
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -143,40 +146,21 @@ ARShop-HackXAmrita2k26/
 
 # 📦 Installation Guide
 
-## 🔹 Step 1: Clone Repository
+## 1️⃣ Clone Repository
 
 ```bash
 git clone <your-repo-link>
 cd ARShop-HackXAmrita2k26
 ```
 
----
-
-## 🔹 Step 2: Create Virtual Environment
+## 2️⃣ Create Virtual Environment
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
----
-
-## 🔹 Step 3: Install Dependencies
-
-Create `requirements.txt`:
-
-```txt
-numpy==1.21.5
-pillow==8.4.0
-scipy==1.8.1
-opencv-python==4.2.0.32
-tensorflow==2.9.0
-keras==2.9.0
-flask==2.1.2
-werkzeug==2.2.2
-```
-
-Install:
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -184,7 +168,7 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Run the Project
+# ▶️ Run the Application
 
 ```bash
 cd backend
@@ -206,77 +190,51 @@ http://127.0.0.1:5000
 
 ---
 
-# 🔄 Core Processing Flow
+# 🔄 Processing Workflow
 
 ```
 Camera Input
-    ↓
-Data Preparation
-    ↓
+   ↓
+Preprocessing
+   ↓
 Body Detection
-    ↓
-Face Detection
-    ↓
-Body Tracking
-    ↓
+   ↓
+Face Alignment
+   ↓
+Keypoint Tracking
+   ↓
 Clothing Scaling
-    ↓
-Image Masking
-    ↓
-Overlay Rendering
-    ↓
-Real-Time Output
+   ↓
+Masking & Blending
+   ↓
+Real-Time AR Output
 ```
-
----
-
-# 🧪 Real-Time Frame Logic
-
-```python
-while True:
-    ret, frame = cap.read()
-    body = detect_body(frame)
-    face = detect_face(frame)
-    scaled_cloth = scale_clothing(body)
-    output = overlay_cloth(frame, scaled_cloth)
-    cv2.imshow("ARShop Virtual Try-On", output)
-```
-
----
-
-# 🖼️ How to Add Top Banner Image
-
-1️⃣ Create folder:
-
-```
-assets/
-```
-
-2️⃣ Add your hackathon banner:
-
-```
-assets/banner.png
-```
-
-3️⃣ It will automatically show at the top.
 
 ---
 
 # 🌟 Future Enhancements
 
-- 3D Cloth Simulation
-- AI-Based Size Recommendation
-- Multi-Angle Try-On
-- Mobile AR Integration
-- E-Commerce API Integration
+- 3D Cloth Simulation  
+- AI-Based Size Recommendation  
+- Multi-Angle Try-On  
+- Mobile AR Integration  
+- E-Commerce Platform Integration  
 
 ---
 
-# 👩‍💻 Developed For
+# 👩‍💻 Developed By
 
-**Hack X Amrita 2.0**  
-Amrita Vishwa Vidyapeetham  
-February 2026  
+<h2 align="center">🐬 Team Baby Shark</h2>
+
+---
+
+# 🏆 Hackathon Submission
+
+**Event:** Hack X Amrita 2.0  
+**Institution:** Amrita Vishwa Vidyapeetham  
+**Project:** ARShop – Virtual Try-On System  
+**Team:** Team Baby Shark  
+**Year:** February 2026  
 
 ---
 

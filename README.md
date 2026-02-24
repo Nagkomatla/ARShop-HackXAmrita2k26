@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="ARShop Banner" width="100%">
+  <img src="assets/banner.jpeg" alt="ARShop Banner" width="100%">
 </p>
 
 <h1 align="center">👗 ARShop – Virtual Try-On System</h1>
@@ -30,7 +30,7 @@ This system bridges the gap between **e-commerce and immersive AR shopping exper
 # 🏗️ System Architecture
 
 <p align="center">
-  <img src="assets/architecture.png" width="80%">
+  <img src="assets/architecture.jpeg" width="80%">
 </p>
 
 ```mermaid
